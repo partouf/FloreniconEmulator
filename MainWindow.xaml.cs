@@ -44,6 +44,7 @@ namespace FloreniconEmulator
 
             lua.RegisterFunction("GetDefaultChatFrame", this, this.GetType().GetMethod("GetDefaultChatFrame"));
 
+            // it seems like NLua doesn't support passing parameters by-reference unlike the WoW api, so we're returning the new values instead
             lua.DoString(
                 "function wipe(arr)\n" +
                 "  arr = {};\n" +
